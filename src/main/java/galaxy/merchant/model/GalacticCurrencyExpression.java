@@ -31,7 +31,7 @@ public class GalacticCurrencyExpression {
 
 	}
 
-	//TODO
+	
 	static Integer calculateGCExpressionValue(List<GalacticCurrency> galacticCurrencyExpression) {
 		final List<Integer> decimalValues = galacticCurrencyExpression.stream()
 				.mapToInt(GalacticCurrency::getRomanValue).boxed().collect(Collectors.toList());

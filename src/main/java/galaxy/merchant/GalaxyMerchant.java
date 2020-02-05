@@ -65,7 +65,7 @@ public class GalaxyMerchant {
 
 		// Filter the queryList
 		final ArrayList<String> queryList = Lists.newArrayList(nonCurrencyDefinitionInput);
-		final List<String> metalValueDefinitions = fetchMetalValueDefinitions(nonCurrencyDefinitionInput);//TODO
+		final List<String> metalValueDefinitions = fetchMetalValueDefinitions(nonCurrencyDefinitionInput);
 		queryList.removeAll(metalValueDefinitions);
 
 		//Determine the values for the currency/credit queries
