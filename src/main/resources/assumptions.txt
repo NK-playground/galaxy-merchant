@@ -1,0 +1,14 @@
+Assumptions:
+1) There are total 4 types of valid statements in the input file
+	- Currency Definitions (Ex: glob is I)
+	- Metal and Value Definitions (Ex: glob prok Gold is 57800 Credits )
+	- Galactic Currency Value Queries (Ex: how much is pish tegj glob glob ?)
+	- Credit Value Queries (Ex: how many Credits is glob prok Gold ?)
+	- Anything other than this is considered invalid input (Ex: how much wood could a woodchuck chuck if a woodchuck could chuck wood ?)
+
+2) Metal value Definitions always end with the word 'Credits'
+3) Galactic Currency Value Queries always begin with 'how much is'
+4) Credit Value Queries always begin with 'how many Credits'
+5) For invalid data, the response should be 'I have no idea what you are talking about'
+6) The output should be in the same order as the respective inputs.
+
