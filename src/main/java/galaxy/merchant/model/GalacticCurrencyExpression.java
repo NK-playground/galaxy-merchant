@@ -32,6 +32,10 @@ public class GalacticCurrencyExpression {
 	}
 
 	
+	/**
+	 * @param galacticCurrencyExpression
+	 * @return
+	 */
 	static Integer calculateGCExpressionValue(List<GalacticCurrency> galacticCurrencyExpression) {
 		final List<Integer> decimalValues = galacticCurrencyExpression.stream()
 				.mapToInt(GalacticCurrency::getRomanValue).boxed().collect(Collectors.toList());
@@ -51,6 +55,11 @@ public class GalacticCurrencyExpression {
 		return additionsList.stream().mapToInt(value -> value.intValue()).sum();
 	}
 
+	/**
+	 * @param decimalValues
+	 * @param currentIndex
+	 * @return
+	 */
 	private static boolean hasReachedEndOfExpression(List<Integer> decimalValues, int currentIndex) {
 		return currentIndex + 1 >= decimalValues.size();
 	}
@@ -66,11 +75,13 @@ public class GalacticCurrencyExpression {
 
 	static void validateRepetition(List<GalacticCurrency> galacticCurrencyExpression) {
 		validateOnlyRepeatableCurrenciesAreRepeated(galacticCurrencyExpression);
-//        validateCurrenciesRepeatOnlyValidNumberOfTimesConsecutively(LEGAL_REPETITION_LIMIT,galacticCurrencyExpression);
 		validateCurrenciesConsecutiveRepetition(galacticCurrencyExpression);
 
 	}
 
+	/**
+	 * @param galacticCurrencyExpression
+	 */
 	private static void validateCurrenciesConsecutiveRepetition(List<GalacticCurrency> galacticCurrencyExpression) {
 		for (int currentIndex = 0; currentIndex < galacticCurrencyExpression.size(); currentIndex++) {
 			GalacticCurrency candidateGalacticCurrency = galacticCurrencyExpression.get(currentIndex);
@@ -92,6 +103,9 @@ public class GalacticCurrencyExpression {
 		}
 	}
 
+	/**
+	 * @param galacticCurrencyExpression
+	 */
 	private static void validateOnlyRepeatableCurrenciesAreRepeated(List<GalacticCurrency> galacticCurrencyExpression) {
 		for (GalacticCurrency galacticCurrency : galacticCurrencyExpression) {
 			final int frequency = Collections.frequency(galacticCurrencyExpression, galacticCurrency);
@@ -103,6 +117,9 @@ public class GalacticCurrencyExpression {
 		}
 	}
 
+	/**
+	 * @param galacticCurrencyExpression
+	 */
 	static void subtractionRule(List<GalacticCurrency> galacticCurrencyExpression) {
 		for (int i = 0; i < galacticCurrencyExpression.size() - 1; i++) {
 			GalacticCurrency currentGalacticCurrencyInExpression = galacticCurrencyExpression.get(i);
